@@ -12,3 +12,5 @@ gitbook serve
 gitbook build ./source ./docs
 ```
 
++ 访问地址
+> https://imthreegold.github.io/grocerystore/index.html
