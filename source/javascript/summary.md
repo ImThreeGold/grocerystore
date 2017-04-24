@@ -53,7 +53,7 @@ this永远指向函数运行时所在的对象，而不是函数被创建时所�
 
 
 ## 说出数组的5个方法
-+ 参考：http://www.cnblogs.com/moqiutao/p/5093861.html
++ [js数组中的常用方法总结](http://www.cnblogs.com/moqiutao/p/5093861.html)
 + ArrayObj.push()：就是向数组末尾添加新的元素，返回的是数组新的长度。
 + ArrayObj.pop()：就是向数组中删除数组最后一个元素并且返回该元素。如果数组为空就返回undefined。
 + ArrayObj.shift():方法用于把数组中的第一个元素删除，并返回第一个元素的值。
