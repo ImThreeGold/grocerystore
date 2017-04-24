@@ -21,9 +21,23 @@ this永远指向函数运行时所在的对象，而不是函数被创建时所�
   BOM和DOM
 > 本地对象和内置对象概念好像
 
-## addeventlistener和onclick的区别
+## element.addEventListener和element.onclick的区别
++ element.onclick 相当于在标签上写onclick，作用于标签；element.addEventListener则是通过DOM接口绑定事件
++ 一个html文档的解析是有顺序的，先解析标签项，再解析DOM项，element.onclick事实上相当于写在标签上，
+通过标签的onclick属性输入到文档，然后由文档解析成事件的。而后者，要在文档解析完成以后，
+通过文档的dom接口去绑定的事件，虽然结果是一样的，都是click事件，但是过程是不同的。
 
-## addEventListener第三个参数作用，和attachEvent区别
+## addEventListener第三个参数作用？
++ element.addEventListener(event, function, useCapture)
++ event：事件名，不要使用on前缀
++ function：指定要事件触发时执行的函数。 
++ useCapture：布尔值，指定事件是否在捕获或冒泡阶段执行。true - 事件句柄在捕获阶段执行；false- 默认。事件句柄在冒泡阶段执行
++ “事件流”的概念：侦听器在侦听时有三个阶段：捕获阶段、目标阶段和冒泡阶段。顺序为：捕获阶段（根节点到子节点检查是否调用了监听函数）→目标阶段（目标本身）→冒泡阶段（目标本身到根节点）。此处的参数确定侦听器是运行于捕获阶段、目标阶段还是冒泡阶段。 如果将 useCapture 设置为 true，则侦听器只在捕获阶段处理事件，而不在目标或冒泡阶段处理事件。 如果useCapture 为 false，则侦听器只在目标或冒泡阶段处理事件。
+
+## addEventListener和attachEvent区别？
++ 关于标准：addEventListener是W3C标准，支持所有浏览器；attachEvent非W3C标准且只支持IE浏览器
++ 关于参数:attachEvent两个参数，事件名（带on的那种）+处理方法；addEventListener三个参数：事件名（不带on的那种）+处理方法+useCapture（true - 事件句柄在捕获阶段执行；false- 默认。事件句柄在冒泡阶段执行）
++ 关于执行顺序：attachEvent：后绑定的先执行。addEventListener：先绑定的先执行
 
 ## use strict是什么意思
 
