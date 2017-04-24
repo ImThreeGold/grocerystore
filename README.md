@@ -9,6 +9,6 @@ gitbook serve
 ```
 + 生产静态页面
 ```
-gitbook build
+gitbook build ./source ./docs
 ```
 
