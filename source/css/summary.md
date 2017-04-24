@@ -24,12 +24,23 @@ http://stackoverflow.com/questions/5612302/which-css-properties-are-inherited
 ie的width包括：padding\border。标准的width不包括：padding\border
 
 ### css预处理器区别
-StylusStylus、Sass、less
+[StylusStylus、Sass、less](http://www.w3cplus.com/css/css-preprocessor-sass-vs-less-stylus-2.html)
++ CSS预处理器定义了一种新的语言，其基本思想是，用一种专门的编程语言，为CSS增加了一些编程的特性，将CSS作为目标生成文件，然后开发者就只要使用这种语言进行编码工作。通俗的说，CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。著作权归作者所有。
+
++ 三者都是开源项目；
++ Sass诞生是最早也是最成熟的CSS预处理器，有Ruby社区和Compass支持；Stylus早期服务器Node JS项目，在该社区得到一定支持者；LESS出现于2009年，支持者远超于Ruby和Node JS社区；
+Sass和LESS语法较为严谨、严密，而Stylus语法相对散漫，其中LESS学习起来更快一些，因为他更像CSS的标准；
++ Sass和LESS相互影响较大，其中Sass受LESS影响，已经进化到了全面兼容CSS的SCSS；
++ Sass和LESS都有第三方工具提供转译，特别是Sass和Compass是绝配；
++ Sass、LESS和Stylus都具有变量、作用域、混合、嵌套、继承、运算符、颜色函数、导入和注释等基本特性，而且以“变量”、“混合”、“嵌套”、“继承”和“颜色函数”称为五大基本特性，各自特性实现功能基本相似，只是使用规则上有所不同；
++ Sass和Stylus具有类似于语言处理的能力，比如说条件语句、循环语句等，而LESS需要通过When等关键词模拟这些功能，在这一方面略逊一层；
 
 ### CSS框架
 Bootstrap,PureCSS,Foundation
 
 ### 栅格系统
+
+### 如何实现响应式布局
 
 ### 媒体查询
 
@@ -37,8 +48,6 @@ Bootstrap,PureCSS,Foundation
 
 ### 垂直居中
 http://www.ydcss.com/archives/497
-
-### 如何实现响应式布局
 
 ### 实现1px的border，要求在不同的分辨率的设备上都是1px
 
