@@ -264,17 +264,64 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x5E7B;&#x706F;&#x6548;&#x679C;&#x9875;&#x9762;">&#x5E7B;&#x706F;&#x6548;&#x679C;&#x9875;&#x9762;</h2>
+                                <h3 id="1-&#x5E7B;&#x706F;&#x6548;&#x679C;&#x9875;&#x9762;">1. &#x5E7B;&#x706F;&#x6548;&#x679C;&#x9875;&#x9762;</h3>
 <p>container&#x5BBD;&#x5EA6;&#x6309;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x786E;&#x5B9A;&#xFF0C;overflow:hidden
 content &#x5BBD;&#x5EA6;=container&#x5BBD;*img&#x7684;&#x4E2A;&#x6570;
 &#x5207;&#x6362;img&#x65F6;&#xFF0C;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;img&#x4F7F;&#x7528;transition&#x8FC7;&#x6E21;&#x52A8;&#x753B;&#xFF0C;&#x4F4D;&#x7F6E;&#x4F7F;&#x7528;transform: translate3d</p>
-<pre><code>&lt;div class=&quot;container&quot;&gt;
-    &lt;div class=&quot;conent&quot;&gt;
-        &lt;img&gt;&lt;img&gt;
-    &lt;div&gt;
-&lt;div&gt;
-</code></pre><h2 id="&#x6D4F;&#x89C8;&#x5668;&#x7684;url&#x4E2D;&#x83B7;&#x53D6;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x53C2;&#x6570;">&#x6D4F;&#x89C8;&#x5668;&#x7684;URL&#x4E2D;&#x83B7;&#x53D6;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x53C2;&#x6570;</h2>
-<h2 id="&#x6570;&#x7EC4;&#x53BB;&#x91CD;&#x624B;&#x5199;&#x4EE3;&#x7801;">&#x6570;&#x7EC4;&#x53BB;&#x91CD;&#x624B;&#x5199;&#x4EE3;&#x7801;</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;conent&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="2-&#x6D4F;&#x89C8;&#x5668;&#x7684;url&#x4E2D;&#x83B7;&#x53D6;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x53C2;&#x6570;">2. &#x6D4F;&#x89C8;&#x5668;&#x7684;URL&#x4E2D;&#x83B7;&#x53D6;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x53C2;&#x6570;</h3>
+<h3 id="3-&#x6570;&#x7EC4;&#x53BB;&#x91CD;&#x624B;&#x5199;&#x4EE3;&#x7801;">3. &#x6570;&#x7EC4;&#x53BB;&#x91CD;&#x624B;&#x5199;&#x4EE3;&#x7801;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> isFunction = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">fn</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.prototype.toString.call(fn) === <span class="hljs-string">&apos;[object Function]&apos;</span>;
+}
+
+<span class="hljs-built_in">Array</span>.prototype.distinct = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">keyThunk</span>) </span>{
+    <span class="hljs-keyword">var</span> arr = <span class="hljs-keyword">this</span>;
+    <span class="hljs-keyword">var</span> dic = {};
+    <span class="hljs-keyword">var</span> result = [];
+    keyThunk = isFunction(keyThunk) ? keyThunk : <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">val</span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">typeof</span> (val) + val;
+    }
+    <span class="hljs-keyword">var</span> hasUnderfined = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">var</span> hasNull = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+        <span class="hljs-keyword">var</span> type = <span class="hljs-keyword">typeof</span> (arr[i]);
+        <span class="hljs-keyword">if</span> (arr[i] === <span class="hljs-literal">null</span>) {
+            <span class="hljs-keyword">if</span> (hasNull == <span class="hljs-literal">true</span>) {
+                <span class="hljs-keyword">continue</span>;
+            }
+            hasNull = <span class="hljs-literal">true</span>;
+        }
+        <span class="hljs-keyword">if</span> (type === <span class="hljs-string">&quot;undefined&quot;</span>) {
+            <span class="hljs-keyword">if</span> (hasUnderfined) {
+                <span class="hljs-keyword">continue</span>;
+            }
+            hasUnderfined = <span class="hljs-literal">true</span>;
+        }
+        <span class="hljs-keyword">var</span> key = keyThunk(arr[i]);
+        <span class="hljs-keyword">if</span> (!dic[key]) {
+            dic[key] = arr[i];
+            result.push(arr[i]);
+        }
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-keyword">var</span> arr = [{ val: <span class="hljs-number">1</span> }, { val: <span class="hljs-number">1</span> }, { val: <span class="hljs-number">3</span> }];
+<span class="hljs-built_in">console</span>.log(arr.distinct().map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">val</span>) </span>{
+    <span class="hljs-keyword">return</span> val.val
+}));<span class="hljs-comment">//[1]</span>
+<span class="hljs-built_in">console</span>.log(arr.distinct(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">val</span>) </span>{
+    <span class="hljs-keyword">return</span> val.val;
+}).map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">val</span>) </span>{
+    <span class="hljs-keyword">return</span> val.val;
+})) [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>]
+</code></pre>
 
                                 
                                 </section>
@@ -318,7 +365,7 @@ content &#x5BBD;&#x5EA6;=container&#x5BBD;*img&#x7684;&#x4E2A;&#x6570;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"实践","level":"1.8","depth":1,"next":{"title":"安全","level":"1.9","depth":1,"path":"secure/summary.md","ref":"secure/summary.md","articles":[]},"previous":{"title":"性能","level":"1.7","depth":1,"path":"performance/summary.md","ref":"performance/summary.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"practice/summary.md","mtime":"2017-04-24T06:23:13.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-24T08:16:22.998Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"实践","level":"1.8","depth":1,"next":{"title":"安全","level":"1.9","depth":1,"path":"secure/summary.md","ref":"secure/summary.md","articles":[]},"previous":{"title":"性能","level":"1.7","depth":1,"path":"performance/summary.md","ref":"performance/summary.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"practice/summary.md","mtime":"2017-04-24T08:47:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-24T08:50:22.334Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
