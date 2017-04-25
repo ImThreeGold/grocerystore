@@ -69,9 +69,9 @@ app.post('/cors', function(req, res) {
 
 + CORS 与 JSONP 的对比
 
-+ CORS 除了 GET 方法外，也支持其它的 HTTP 请求方法如 POST、 PUT 等。
-+ CORS 可以使用 XmlHttpRequest 进行传输，所以它的错误处理方式比 JSONP 好。
-+ JSONP 可以在不支持 CORS 的老旧浏览器上运作。
+> CORS 除了 GET 方法外，也支持其它的 HTTP 请求方法如 POST、 PUT 等。
+CORS 可以使用 XmlHttpRequest 进行传输，所以它的错误处理方式比 JSONP 好。
+JSONP 可以在不支持 CORS 的老旧浏览器上运作。
 
 + 一些其它的跨域调用方式
 
