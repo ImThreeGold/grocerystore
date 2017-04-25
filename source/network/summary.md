@@ -1,4 +1,22 @@
 ### 1. http状态码
+[HTTP状态码详解](http://www.daqianduan.com/4280.html)
+
+| 状态代码       | 状态信息   |      含义 |
+| ------------- |:-------------:| -----:|
+|100   | Continue  |  初始的请求已经接受，客户应当继续发送请求的其余部分。|
+|200   | OK | 一切正常，对GET和POST请求的应答文档跟在后面。|
+|201 | Created | 服务器已经创建了文档，Location头给出了它的URL。 |
+| 202  | Accepted   | 已经接受请求，但处理尚未完成。 |
+| 301  | Moved Permanently   | 客户请求的文档在其他地方，新的URL在Location头中给出，浏览器应该自动地访问新的URL。 |
+| 302  | Found |  类似于301，但新的URL应该被视为临时性的替代，而不是永久性的。 |
+| 304  | Not Modified | 服务器告 诉客户，原来缓冲的文档还可以继续使用。 |
+| 400  |  Bad Request |  请求出现语法错误。 |
+|  401 |  Unauthorized   |  客户试图未经授权访问受密码保护的页面。 |
+| 403  |  Forbidden  |  资源不可用。服务器理解客户的请求，但拒绝处理它。通常由于服务器上文件或目录的权限设置导致。 |
+|404  |   Not Found  |  无法找到指定位置的资源。这也是一个常用的应答。|
+|405   |  Method Not Allowed  | 请求方法（GET、POST、HEAD、DELETE、PUT、TRACE等）对指定的资源不适用| 
+|500   |  Internal Server Error  |  服务器遇到了意料不到的情况，不能完成客户的请求。|
+|505   |  HTTP Version Not Supported |  服务器不支持请求中所指明的HTTP版本|
 
 
 ### 2. 如何解决跨域，允许跨域设置头部的内容是什么
