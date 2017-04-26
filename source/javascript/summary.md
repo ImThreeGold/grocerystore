@@ -7,6 +7,25 @@ this永远指向函数运行时所在的对象，而不是函数被创建时所�
 
 ### Function.prototype.bind
 
+```js
+if(Function.prototype.bind===undefined){
+	Function.prototype.bind=function(obj/*，参数列表*/){
+		var fun=this;//留住this
+		//*****将类数组对象，转化为普通数组
+		var args=Array.prototype.slice.call(arguments,1);
+	
+		return function(){
+			//将后传入的参数值，转为普通数组      
+			var innerArgs=Array.prototype.slice.call(arguments);//将之前绑定的参数值和新传入的参数值，拼接为完整参数之列表
+			var allArgs=args.concat(innerArgs)
+			//调用原始函数fun，替换this为obj，传入所有参数
+			fun.apply(obj,allArgs);
+			}
+		}
+	}
+  ```
+
+
 
 ### ”attribute”和”property”的区别是什么？
 
