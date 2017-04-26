@@ -12,7 +12,7 @@ this永远指向函数运行时所在的对象，而不是函数被创建时所�
 
 ### deferred对象
 
-### 对象
+### 本地对象、内置对象和宿主对象
 + 本地对象
   Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、EvalError、RangeError、ReferenceError、SyntaxError、TypeError、URIError
 + 内置对象
