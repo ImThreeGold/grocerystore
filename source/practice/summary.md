@@ -62,4 +62,7 @@ console.log(arr.distinct(function (val) {
 })) [1,3]
 ```
 
+### 4. linux指令熟悉吗？查看磁盘大小的指令是哪个？
+> du -h
+
 

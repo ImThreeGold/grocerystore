@@ -113,5 +113,8 @@ http://www.ydcss.com/archives/497
 单位rem是相对于根元素（html）
 
 
+### 5. css属性如何使固定宽度的div水平居中
+{margin: 0 auto;}
+
 
 
