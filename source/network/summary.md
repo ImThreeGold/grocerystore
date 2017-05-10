@@ -1,22 +1,23 @@
+
 ### 1. http状态码
 [HTTP状态码详解](http://www.daqianduan.com/4280.html)
 
-| 状态代码       | 状态信息   |      含义 |
-| ------------- |:-------------:| -----:|
-|100   | Continue  |  初始的请求已经接受，客户应当继续发送请求的其余部分。|
-|200   | OK | 一切正常，对GET和POST请求的应答文档跟在后面。|
-|201 | Created | 服务器已经创建了文档，Location头给出了它的URL。 |
-| 202  | Accepted   | 已经接受请求，但处理尚未完成。 |
-| 301  | Moved Permanently   | 客户请求的文档在其他地方，新的URL在Location头中给出，浏览器应该自动地访问新的URL。 |
-| 302  | Found |  类似于301，但新的URL应该被视为临时性的替代，而不是永久性的。 |
-| 304  | Not Modified | 服务器告 诉客户，原来缓冲的文档还可以继续使用。 |
-| 400  |  Bad Request |  请求出现语法错误。 |
-|  401 |  Unauthorized   |  客户试图未经授权访问受密码保护的页面。 |
-| 403  |  Forbidden  |  资源不可用。服务器理解客户的请求，但拒绝处理它。通常由于服务器上文件或目录的权限设置导致。 |
-|404  |   Not Found  |  无法找到指定位置的资源。这也是一个常用的应答。|
-|405   |  Method Not Allowed  | 请求方法（GET、POST、HEAD、DELETE、PUT、TRACE等）对指定的资源不适用| 
-|500   |  Internal Server Error  |  服务器遇到了意料不到的情况，不能完成客户的请求。|
-|505   |  HTTP Version Not Supported |  服务器不支持请求中所指明的HTTP版本|
+| 状态代码 |            状态信息            |                                       含义 |
+| ---- | :------------------------: | ---------------------------------------: |
+| 100  |          Continue          |               初始的请求已经接受，客户应当继续发送请求的其余部分。 |
+| 200  |             OK             |               一切正常，对GET和POST请求的应答文档跟在后面。 |
+| 201  |          Created           |            服务器已经创建了文档，Location头给出了它的URL。 |
+| 202  |          Accepted          |                          已经接受请求，但处理尚未完成。 |
+| 301  |     Moved Permanently      | 客户请求的文档在其他地方，新的URL在Location头中给出，浏览器应该自动地访问新的URL。 |
+| 302  |           Found            |        类似于301，但新的URL应该被视为临时性的替代，而不是永久性的。 |
+| 304  |        Not Modified        |                 服务器告 诉客户，原来缓冲的文档还可以继续使用。 |
+| 400  |        Bad Request         |                                请求出现语法错误。 |
+| 401  |        Unauthorized        |                      客户试图未经授权访问受密码保护的页面。 |
+| 403  |         Forbidden          | 资源不可用。服务器理解客户的请求，但拒绝处理它。通常由于服务器上文件或目录的权限设置导致。 |
+| 404  |         Not Found          |                  无法找到指定位置的资源。这也是一个常用的应答。 |
+| 405  |     Method Not Allowed     | 请求方法（GET、POST、HEAD、DELETE、PUT、TRACE等）对指定的资源不适用 |
+| 500  |   Internal Server Error    |                 服务器遇到了意料不到的情况，不能完成客户的请求。 |
+| 505  | HTTP Version Not Supported |                      服务器不支持请求中所指明的HTTP版本 |
 
 
 ### 2. 如何解决跨域，允许跨域设置头部的内容是什么
@@ -61,11 +62,11 @@ app.get('/ajax/deal', function(req, res) {
 
 + JSONP的不足：
 > 只能使用 GET 方法发起请求，这是由于 script 标签自身的限制决定的。
-不能很好的发现错误，并进行处理。
+> 不能很好的发现错误，并进行处理。
 
 +  使用 CORS 实现跨域调用
 
-+ Cross-Origin Resource Sharing（CORS）跨域资源共享是一份浏览器技术的规范，提供了 Web 服务从不同域传来沙盒脚本的方法，以避开浏览器的同源策略，是 JSONP 模式的现代版。与 JSONP 不同，CORS 除了 GET 要求方法以外也支持其他的 HTTP 要求。用 CORS 可以让网页设计师用一般的 XMLHttpRequest，这种方式的错误处理比 JSONP 要来的好。另一方面，JSONP 可以在不支持 CORS 的老旧浏览器上运作。现代的浏览器都支持 CORS。
++  Cross-Origin Resource Sharing（CORS）跨域资源共享是一份浏览器技术的规范，提供了 Web 服务从不同域传来沙盒脚本的方法，以避开浏览器的同源策略，是 JSONP 模式的现代版。与 JSONP 不同，CORS 除了 GET 要求方法以外也支持其他的 HTTP 要求。用 CORS 可以让网页设计师用一般的 XMLHttpRequest，这种方式的错误处理比 JSONP 要来的好。另一方面，JSONP 可以在不支持 CORS 的老旧浏览器上运作。现代的浏览器都支持 CORS。
 
 服务端：
 ```js
@@ -88,8 +89,8 @@ app.post('/cors', function(req, res) {
 + CORS 与 JSONP 的对比
 
 > CORS 除了 GET 方法外，也支持其它的 HTTP 请求方法如 POST、 PUT 等。
-CORS 可以使用 XmlHttpRequest 进行传输，所以它的错误处理方式比 JSONP 好。
-JSONP 可以在不支持 CORS 的老旧浏览器上运作。
+> CORS 可以使用 XmlHttpRequest 进行传输，所以它的错误处理方式比 JSONP 好。
+> JSONP 可以在不支持 CORS 的老旧浏览器上运作。
 
 + 一些其它的跨域调用方式
 
@@ -100,6 +101,27 @@ JSONP 可以在不支持 CORS 的老旧浏览器上运作。
 + window.postMessage()
 
 > 这个方法是 HTML5 的一个新特性，可以用来向其他所有的 window 对象发送消息。需要注意的是我们必须要保证所有的脚本执行完才发送 MessageEvent，如果在函数执行的过程中调用了他，就会让后面的函数超时无法执行。
+
+### 3.get和post区别
+| 描述        |                   GET                    |                   POST                   |
+| --------- | :--------------------------------------: | :--------------------------------------: |
+| 历史        |         参数会被存在浏览器历史中，因为作为URL的一部分         |                不存在浏览器历史中                 |
+| 书签        |                 可以书签可收藏                  |                   不可以                    |
+| 后退按钮/重复提交 |         请求可以再次执行，如果有浏览器缓存则不会再次提交         |              浏览器一般会询问是否重复提交              |
+| 编码类型      |    application/x-www-form-urlencoded     | multipart/form-data 、 application/x-www-form-urlencoded 、 multipart（二进制数据） |
+| 参数        |    有限制，数据会放到URL上。建议使用2K以内，有些服务器支持到64K    |              没有限制，甚至可以上传文件               |
+| 攻击        |                 比较容易被攻击                  |                   不容易                    |
+| 对表单数据类型限制 |               有，只允许ASCII字符               |               没有，二进制数据也可以                |
+| 安全        |           没有POST安全，因为数据放在URL上            |                 比GET安全些                  |
+| 数据长度限制    | 数据放在URL上，URL长度有限制。一般URL限制2048个字符，但是不同浏览器和服务器有差异 |                   没有限制                   |
+| 可用性       |             密码和敏感的信息是不使用GET的             |             密码和敏感的信息可以使用GET的             |
+| 可以性       |           对所有人可见的，因为信息显示在URL上            |                信息不显示在URL上                |
+| 缓存的       |                    可以                    |                   不可以                    |
+
+[详细比较](http://www.diffen.com/difference/GET-vs-POST-HTTP-Requests)
+
+
+
 
 
 
