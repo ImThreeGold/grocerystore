@@ -526,6 +526,39 @@ cookie &#x548C;session &#x7684;&#x533A;&#x522B;&#xFF1A;</p>
 <li>session&#x4F1A;&#x5728;&#x4E00;&#x5B9A;&#x65F6;&#x95F4;&#x5185;&#x4FDD;&#x5B58;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x3002;&#x5F53;&#x8BBF;&#x95EE;&#x589E;&#x591A;&#xFF0C;&#x4F1A;&#x6BD4;&#x8F83;&#x5360;&#x7528;&#x4F60;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6027;&#x80FD;&#x8003;&#x8651;&#x5230;&#x51CF;&#x8F7B;&#x670D;&#x52A1;&#x5668;&#x6027;&#x80FD;&#x65B9;&#x9762;&#xFF0C;&#x5E94;&#x5F53;&#x4F7F;&#x7528;COOKIE&#x3002;</li>
 <li>&#x5355;&#x4E2A;cookie&#x4FDD;&#x5B58;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;4K&#xFF0C;&#x5F88;&#x591A;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x9650;&#x5236;&#x4E00;&#x4E2A;&#x7AD9;&#x70B9;&#x6700;&#x591A;&#x4FDD;&#x5B58;20&#x4E2A;cookie&#x3002;</li>
 </ul>
+<h3 id="5-http&#x548C;http20">5. Http&#x548C;Http2.0</h3>
+<ul>
+<li><p>Http
+1.&#x56E0;&#x4E3A;&#x5EF6;&#x8FDF;&#xFF0C;&#x6240;&#x4EE5;&#x6162;
+2.&#x89E3;&#x51B3;&#x8FDE;&#x63A5;&#x65E0;&#x6CD5;&#x590D;&#x7528;
+3.&#x89E3;&#x51B3;head of line blocking</p>
+</li>
+<li><p>&#x5F00;&#x62D3;&#x8005;SPDY
+1.SPDY&#x7684;&#x76EE;&#x6807;&#x5728;&#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x662F;&#x7784;&#x51C6;http1.x&#x7684;&#x75DB;&#x70B9;&#xFF0C;&#x5373;&#x5EF6;&#x8FDF;&#x548C;&#x5B89;&#x5168;&#x6027;&#x3002;
+2.&#x964D;&#x4F4E;&#x5EF6;&#x8FDF;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x5355;&#x8FDE;&#x63A5;&#x5355;&#x8BF7;&#x6C42;&#xFF0C;server&#x7684;FIFO&#x54CD;&#x5E94;&#x961F;&#x5217;&#x90FD;&#x662F;&#x5EF6;&#x8FDF;&#x7684;&#x5927;&#x5934;&#x3002;
+3.http&#x6700;&#x521D;&#x8BBE;&#x8BA1;&#x90FD;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#xFF0C;&#x7136;&#x540E;server&#x54CD;&#x5E94;&#xFF0C;server&#x65E0;&#x6CD5;&#x4E3B;&#x52A8;push&#x5185;&#x5BB9;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x3002;
+4.&#x538B;&#x7F29;http header&#xFF0C;http1.x&#x7684;header&#x8D8A;&#x6765;&#x8D8A;&#x81A8;&#x80C0;&#xFF0C;cookie&#x548C;user agent&#x5F88;&#x5BB9;&#x6613;&#x8BA9;header&#x7684;size&#x589E;&#x81F3;1kb&#x5927;&#x5C0F;&#xFF0C;&#x751A;&#x81F3;&#x66F4;&#x591A;&#x3002;&#x800C;&#x4E14;&#x7531;&#x4E8E;http&#x7684;&#x65E0;&#x72B6;&#x6001;&#x7279;&#x6027;&#xFF0C;header&#x5FC5;&#x987B;&#x6BCF;&#x6B21;request&#x90FD;&#x91CD;&#x590D;&#x643A;&#x5E26;&#xFF0C;&#x5F88;&#x6D6A;&#x8D39;&#x6D41;&#x91CF;&#x3002;</p>
+</li>
+<li><p>Http2.0&#x8003;&#x8651;&#x7684;&#x95EE;&#x9898;
+1.&#x5BA2;&#x6237;&#x7AEF;&#x5411;server&#x53D1;&#x9001;request&#x8FD9;&#x79CD;&#x57FA;&#x672C;&#x6A21;&#x578B;&#x4E0D;&#x4F1A;&#x53D8;&#x3002;
+2.&#x8001;&#x7684;scheme&#x4E0D;&#x4F1A;&#x53D8;&#xFF0C;&#x4F7F;&#x7528;<a href="http://&#x548C;https://&#x7684;&#x670D;&#x52A1;&#x548C;&#x5E94;&#x7528;&#x4E0D;&#x4F1A;&#x8981;&#x505A;&#x4EFB;&#x4F55;&#x66F4;&#x6539;&#xFF0C;&#x4E0D;&#x4F1A;&#x6709;http2://&#x3002;" target="_blank">http://&#x548C;https://&#x7684;&#x670D;&#x52A1;&#x548C;&#x5E94;&#x7528;&#x4E0D;&#x4F1A;&#x8981;&#x505A;&#x4EFB;&#x4F55;&#x66F4;&#x6539;&#xFF0C;&#x4E0D;&#x4F1A;&#x6709;http2://&#x3002;</a>
+3.&#x4F7F;&#x7528;http1.x&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x4EE5;&#x65E0;&#x7F1D;&#x7684;&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x65B9;&#x5F0F;&#x8F6C;&#x63A5;&#x5230;http2.0&#x4E0A;&#x3002;
+4.&#x4E0D;&#x8BC6;&#x522B;http2.0&#x7684;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x4EE5;&#x5C06;&#x8BF7;&#x6C42;&#x964D;&#x7EA7;&#x5230;http1.x&#x3002;</p>
+</li>
+<li><p>HTTP2.0&#x4E3B;&#x8981;&#x6539;&#x52A8;
+1.&#x65B0;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#xFF08;Binary Format&#xFF09;
+2.&#x8FDE;&#x63A5;&#x5171;&#x4EAB;
+3.header&#x538B;&#x7F29;
+4.&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#x7684;&#x9009;&#x62E9;&#xFF1A;&#x4E00;&#x79CD;&#x53EB;HPACK&#x7684;&#x538B;&#x7F29;&#x7B97;&#x6CD5;
+5.&#x91CD;&#x7F6E;&#x8FDE;&#x63A5;&#x8868;&#x73B0;&#x66F4;&#x597D;&#xFF1A;http2.0&#x5F15;&#x5165;RST_STREAM&#x7C7B;&#x578B;&#x7684;frame
+6.Server Push
+7.&#x6D41;&#x91CF;&#x63A7;&#x5236;&#xFF08;Flow Control&#xFF09;
+8.Nagle Algorithm vs TCP Delayed Ack
+9.&#x66F4;&#x5B89;&#x5168;&#x7684;SSL&#xFF1A;HTTP2.0&#x4F7F;&#x7528;&#x4E86;tls&#x7684;&#x62D3;&#x5C55;ALPN&#x6765;&#x505A;&#x534F;&#x8BAE;&#x5347;&#x7EA7;</p>
+</li>
+<li><p>HTTP2.0&#x6700;&#x5927;&#x7684;&#x4EAE;&#x70B9;&#x5728;&#x4E8E;&#x591A;&#x8DEF;&#x590D;&#x7528;&#xFF0C;&#x800C;&#x591A;&#x8DEF;&#x590D;&#x7528;&#x7684;&#x597D;&#x5904;&#x53EA;&#x6709;&#x5728;http&#x8BF7;&#x6C42;&#x91CF;&#x5927;&#x7684;&#x573A;&#x666F;&#x4E0B;&#x624D;&#x660E;&#x663E;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x4EBA;&#x4F1A;&#x89C9;&#x5F97;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x6D4F;&#x89C8;&#x5927;&#x578B;&#x7AD9;&#x70B9;&#x7684;&#x65F6;&#x5019;&#x3002;</p>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -569,7 +602,7 @@ cookie &#x548C;session &#x7684;&#x533A;&#x522B;&#xFF1A;</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"网络","level":"1.6","depth":1,"next":{"title":"性能","level":"1.7","depth":1,"path":"performance/summary.md","ref":"performance/summary.md","articles":[]},"previous":{"title":"框架","level":"1.5","depth":1,"path":"framework/summary.md","ref":"framework/summary.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"network/summary.md","mtime":"2017-05-15T08:20:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-15T08:43:29.843Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"网络","level":"1.6","depth":1,"next":{"title":"性能","level":"1.7","depth":1,"path":"performance/summary.md","ref":"performance/summary.md","articles":[]},"previous":{"title":"框架","level":"1.5","depth":1,"path":"framework/summary.md","ref":"framework/summary.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"network/summary.md","mtime":"2017-05-18T02:16:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-18T02:16:10.794Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

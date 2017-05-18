@@ -139,6 +139,51 @@ cookie 和session 的区别：
 + 单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。
 
 
+### 5. Http和Http2.0
+
++ Http
+
+```
+1.因为延迟，所以慢
+2.解决连接无法复用
+3.解决head of line blocking
+```
+
++ 开拓者SPDY
+
+```
+1.SPDY的目标在一开始就是瞄准http1.x的痛点，即延迟和安全性。
+2.降低延迟，客户端的单连接单请求，server的FIFO响应队列都是延迟的大头。
+3.http最初设计都是客户端发起请求，然后server响应，server无法主动push内容到客户端。
+4.压缩http header，http1.x的header越来越膨胀，cookie和user agent很容易让header的size增至1kb大小，甚至更多。而且由于http的无状态特性，header必须每次request都重复携带，很浪费流量。
+```
+
++ Http2.0考虑的问题
+
+```
+1.客户端向server发送request这种基本模型不会变。
+2.老的scheme不会变，使用http://和https://的服务和应用不会要做任何更改，不会有http2://。
+3.使用http1.x的客户端和服务器可以无缝的通过代理方式转接到http2.0上。
+4.不识别http2.0的代理服务器可以将请求降级到http1.x。
+```
+
++ HTTP2.0主要改动
+
+```
+1.新的二进制格式（Binary Format）
+2.连接共享
+3.header压缩
+4.压缩算法的选择：一种叫HPACK的压缩算法
+5.重置连接表现更好：http2.0引入RST_STREAM类型的frame
+6.Server Push
+7.流量控制（Flow Control）
+8.Nagle Algorithm vs TCP Delayed Ack
+9.更安全的SSL：HTTP2.0使用了tls的拓展ALPN来做协议升级
+```
+
++ HTTP2.0最大的亮点在于多路复用，而多路复用的好处只有在http请求量大的场景下才明显，所以有人会觉得只适用于浏览器浏览大型站点的时候。
+
+
 
 
 
