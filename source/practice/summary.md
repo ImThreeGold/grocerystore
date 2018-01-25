@@ -12,6 +12,18 @@ content 宽度=container宽*img的个数
 
 ### 2. 浏览器的URL中获取查询字符串参数
 
+```javascript
+let getUrlParams = (name) => {
+	let reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	let r = window.location.search.substr(1).match(reg);
+	if (r != null) {
+		return r[2]; 
+	} else {
+		return null;
+	}
+}
+```
+
 ### 3. 数组去重手写代码
 
 ```js
